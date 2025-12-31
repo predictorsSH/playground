@@ -1,0 +1,25 @@
+[project]
+name = "playground"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "marimo>=0.18.4",
+]
+
+
+[tool.ruff]
+fix = false
+target-version = "py312"
+line-length = 120
+exclude = [".venv/*", "doc/*", ".git", "ipynb_checkpoints", "ruff_cache", "site-packagets"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["D","N803","N806", "W191", "ANN001","RET504","ANN201","COM812", "W293", "W292", "N999", "T201", "FIX002", "TD002", "TD003", "RUF001", "ERA001", "INP001"]
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+indent-style = "space"

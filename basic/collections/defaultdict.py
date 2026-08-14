@@ -6,9 +6,10 @@ app = marimo.App(width="medium")
 
 @app.cell
 def _():
-    import marimo as mo # 마크다운용
+    import marimo as mo  # 마크다운용
 
     from collections import defaultdict
+
     return defaultdict, mo
 
 
@@ -24,14 +25,14 @@ def _(mo):
 @app.cell
 def _():
     d = {}
-    d["a"] += 1 # KeyError
+    d["a"] += 1  # KeyError
     return
 
 
 @app.cell
 def _(defaultdict):
     dd = defaultdict(int)
-    dd["a"] +=1
+    dd["a"] += 1
     return
 
 
@@ -49,12 +50,12 @@ def _(mo):
 def _(defaultdict):
     groups = defaultdict(list)
 
-    data = [("a",1), ("b", 2), ("a",3)]
+    data = [("a", 1), ("b", 2), ("a", 3)]
 
     for key, value in data:
         groups[key].append(value)
 
-    print(groups) # {'a':[1,3], 'b':[2]}
+    print(groups)  # {'a':[1,3], 'b':[2]}
 
     return
 

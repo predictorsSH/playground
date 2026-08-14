@@ -19,14 +19,14 @@ def _(get_word, source):
 def word_number(word):
     magic = 0
     for letter in word:
-        magic += 1 + ord(letter) - ord('a')
+        magic += 1 + ord(letter) - ord("a")
 
     return magic
 
 
 @app.cell
 def _():
-    word_number('a')
+    word_number("a")
     return
 
 
@@ -35,7 +35,6 @@ def _(get_word, source2):
     def word_numbers(src):
         while (word := get_word(src)) is not None:
             yield word_number(word)
-
 
     magic_nums = list(word_numbers(source2))
     return

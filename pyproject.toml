@@ -7,11 +7,8 @@ requires-python = ">=3.12"
 dependencies = [
     "ipykernel>=7.1.0",
     "marimo>=0.18.4",
-<<<<<<< Updated upstream
     "matplotlib>=3.10.8",
-=======
     "ortools>=9.15.6755",
->>>>>>> Stashed changes
 ]
 
 
@@ -23,9 +20,14 @@ exclude = [".venv/*", "doc/*", ".git", "ipynb_checkpoints", "ruff_cache", "site-
 
 [tool.ruff.lint]
 select = ["ALL"]
-ignore = ["D","N803","N806", "W191", "ANN001","RET504","ANN201","COM812", "W293", "W292", "N999", "T201", "FIX002", "TD002", "TD003", "RUF001", "ERA001", "INP001"]
+ignore = ["D","N803","N806", "W191", "ANN001","RET504","ANN201","COM812", "W293", "W292", "N999", "T201", "FIX002", "TD002", "TD003", "RUF001", "ERA001", "INP001", "CPY001"]
 
 [tool.ruff.format]
 # Like Black, use double quotes for strings.
 quote-style = "double"
 indent-style = "space"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.2",
+]

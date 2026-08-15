@@ -36,18 +36,17 @@ def compress_logs_v1(logs):
         return []
 
     compressed_logs = []
-    start_txt, start_sec = logs[0]
-    prev_sec = start_sec
+    curr = (logs[0][0], logs[0][1], logs[0][1])
 
     for txt, sec in logs[1:]:
-        if (txt == start_txt) and (prev_sec == sec - 1):
-            prev_sec = sec
+        if txt == curr[0] and sec - 1 == curr[2]:
+            curr = (curr[0], curr[1], sec)
 
         else:
-            compressed_logs.append((start_txt, start_sec, prev_sec))
-            start_txt, start_sec, prev_sec = txt, sec, sec
+            compressed_logs.append(curr)
+            curr = (txt, sec, sec)
 
-    compressed_logs.append((start_txt, start_sec, prev_sec))
+    compressed_logs.append(curr)
     return compressed_logs
 
 

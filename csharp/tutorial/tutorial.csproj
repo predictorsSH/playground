@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!-- 아직 채우지 않은 TODO 변수 때문에 뜨는 경고를 숨긴다 -->
+    <NoWarn>CS0219;CS0168</NoWarn>
+  </PropertyGroup>
+
+</Project>
